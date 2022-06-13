@@ -24,9 +24,18 @@ for n in random_numbers:
     random_list.append(n)
 
 
+# first attempt
 random.shuffle(random_list)
 password = ''.join(random_list)
 print(password)
+
+
+# second attemp
+new_list = random_letters + random_symbols + random_numbers
+print(new_list)
+random.shuffle(new_list)
+password1 = ''.join(new_list)
+print(password1)
 
 
 
