@@ -10,32 +10,29 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-random_list = []
-random_letters = random.choices(letters, k=nr_letters)
-for l in random_letters:
-    random_list.append(l)
+password = ""
 
-random_symbols = random.choices(symbols, k=nr_symbols)
-for s in random_symbols:
-    random_list.append(s)
+for char in range(1, nr_letters +1):
+    random_char = random.choice(letters)
+    password = password + random_char
 
-random_numbers = random.choices(numbers, k=nr_numbers)
-for n in random_numbers:
-    random_list.append(n)
+for symbol in range(1, nr_symbols + 1):
+    random_sym = random.choice(symbols)
+    password = password + random_sym
 
+for num in range(1, nr_numbers + 1):
+    random_num = random.choice(numbers)
+    password = password  + random_num
 
-# first attempt
-random.shuffle(random_list)
-password = ''.join(random_list)
+# mutate password string to a list
+password = list(password)
+# shuffling password character list into random order
+random.shuffle(password)
+# change list to string
+password = ''.join(password)
 print(password)
 
 
-# second attemp
-new_list = random_letters + random_symbols + random_numbers
-print(new_list)
-random.shuffle(new_list)
-password1 = ''.join(new_list)
-print(password1)
 
 
 
