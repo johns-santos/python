@@ -1,0 +1,13 @@
+function parameters
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Mon Jun 20 02:13:23 2022 -0500
+#
+# On branch master
+# Changes to be committed:
+#	deleted:    basic_concepts/day_07/test.py
+#	deleted:    basic_concepts/day_07/test2.py
+#	new file:   basic_concepts/day_08/main.py
+#
