@@ -1,7 +1,6 @@
 from logo import logo
 
 print(logo)
-
 repeat = True
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
@@ -31,3 +30,4 @@ while repeat:
     if should_continue == 'no':
         repeat = False
         print("\nGoodbye\n")
+
