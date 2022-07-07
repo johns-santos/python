@@ -59,3 +59,8 @@ add_new_country("Russia", ["Moscow", "Saint Petersberg", "Odessa"], 2)
 for each in travel_log_01:
     print(each)
 
+
+
+# Print location of index 2 in list where 'cities_visited index is 2.
+print(travel_log_01[2]['cities_visited'][2])
+
