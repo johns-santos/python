@@ -1,3 +1,5 @@
+from replit import clear
+
 from art import logo
 
 
@@ -36,16 +38,13 @@ def calculator():
 
         print(f"{n1} {sign} {n2} = {answer}")
 
-        how_continue = input(f"Type 'y' to save result and continue calculating with {answer}  \nor 'n' to start new calculation: ")
+        how_continue = input(f"Type 'y' to save result and continue calculating with {answer}  \nor 'n' to start new calculation, \nor press any other key to exit:\n")
 
         if how_continue == 'y':
             n1 = answer
         elif how_continue == 'n':
             cont = False
             calculator()
-        elif how_continue != 'y' or how_continue != 'n' or how_continue != 'n':
-            print("Invalid option")
-            print(how_continue)
         else:
             break
 
