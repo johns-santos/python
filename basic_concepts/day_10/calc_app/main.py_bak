@@ -1,0 +1,32 @@
+from art import logo
+
+print(logo)
+use_result = True
+
+while use_result == True:
+
+
+    first_num = int(input("What's the first number?: "))
+    operation_sign = input("Pick an operation: * \n+ \n- \n* \n/ \n: ")
+    second_num = int(input("What's the second number?: "))
+
+    result = ""
+
+    if operation_sign == "*":
+        result = first_num * second_num
+    elif operation_sign == "-":
+        result = first_num - second_num
+    elif operation_sign == "+":
+        result = first_num + second_num
+    elif operation_sign == "/":
+        result = first_num / second_num
+    else:
+        print(f"invalid option")
+    
+    print(result)
+
+    continue_cal = input("Would you like to use product for next operation?:")
+    if continue_cal == "no":
+        use_result = False
+        result = ""
+        
