@@ -3,7 +3,6 @@ import random
 from replit import clear
 from art import logo
 
-
 # Create a deal_card() function that uses the List below to *return* a random card.
 #11 is the Ace.  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 def deal_card():
@@ -72,7 +71,6 @@ def play_game():
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
-
     print(compare(user_score, computer_score))
 
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y':

@@ -3,8 +3,6 @@ def main():
     print("x squard is", square(x))
 
 
-
-
 def square(n):
     return n * n
 
