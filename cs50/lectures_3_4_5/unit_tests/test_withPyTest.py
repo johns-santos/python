@@ -1,9 +1,6 @@
-
 # ==========================
 # Unit testing with "pytest" and assert
 # ===========================
-
-
 from calculator import square
 
 # Test 1
@@ -19,3 +16,4 @@ def test_negative():
 # Test 3
 def test_zero():
     assert square(0) == 0
+
