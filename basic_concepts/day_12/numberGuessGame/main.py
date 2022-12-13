@@ -11,7 +11,6 @@ number = random.randint(0, 50)
 def guessing_game():
     print("I am thinking of a number between 1 and 100.")
     guess = 0
-
     # Set difficulty level - I.E., Number of user guesses.
     diffculty = input("Choose a difficulty. Type 'easy' or 'hard': \n").lower()
     if diffculty == "easy":
@@ -20,12 +19,9 @@ def guessing_game():
     else:
         guess_count = 5
         print(f"You have 5 guesses.")
-
     # WHILE LOOP - while total guess is less than guess_count set by difficulty.
     while guess < guess_count:
-
         remaining_guesses = guess_count - guess
-
         user_guess = int(input("Pleaes guess a number: "))
         if user_guess < number:
             print(f"Your guess is to low. Take another guess. You have {remaining_guesses -1} guesses left.")
