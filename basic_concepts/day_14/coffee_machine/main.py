@@ -18,7 +18,6 @@ def getMenu():
 def findDrink(d):
     return menu.find_drink(d)
 
-
 # Prompt user for input while "completed" equals 0
 completed = 0
 while completed == 0:
@@ -26,15 +25,12 @@ while completed == 0:
     userOrder = input(f"\nWhat would you like? ({options}) : ").lower()
     
     # Validate user input.
-    if userOrder != "report" and "off" and "latte" and "espresso" and "cappachino":
+    if userOrder != "report" and userOrder != "off" and userOrder != "latte" and userOrder != "espresso" and userOrder != "cappuccino":
         print(f"\nInput not valid!\n")
     # Print reports if user types "report"
     elif userOrder == "report":
-        print("")
         coffeeReport()
-        print("")
         moneyReport()
-        print("")
     # Stop program when user types "off" by seting completed to 1
     elif userOrder == "off":
         completed += 1
