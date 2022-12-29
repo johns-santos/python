@@ -1,10 +1,7 @@
 # Add GETTERS and SETTERs. Compare this file to main.py
-
+# Using GETTER and SETTER for ERROR CHECKING
 class Student:
     def __init__(self, name, school):
-        # Validate NAME and SCHOOL
-         if not name:
-             raise ValueError("Missing Name.")
          self.name = name
          self.school = school  
              
@@ -24,14 +21,26 @@ class Student:
              raise ValueError("Invalid school")
          # Underscore represents "variable" as to not collide with "school" property.
         self._school = school
-
-
+        
+    @property
+    def name(self):
+        return self._name
     
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing Name.")
+        self._name = name
+
+
 def main():
     student = get_student()
     # FOLLOWING reassignment is not ALLOWED by SETTER 
     # student.school = "Sammy, Funny Man"
     print(student)
+  
+
+
     
   
 def get_student():
