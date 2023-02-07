@@ -11,13 +11,14 @@ tim.pencolor("")
 
 
 def main():
-    shape(3,50,120,"blue")
-    shape(4,50,90,"black")
-    shape(5,50,72,"red")
-    shape(6,50,60,"cyan")
-    shape(7,50,51.42,"magenta")
-    shape(8,50,45,"purple")
-    shape(9,50,40,"pink")
+    shape(3,40,120,"blue")
+    shape(4,40,90,"black")
+    shape(5,40,72,"red")
+    shape(6,40,60,"cyan")
+    shape(7,40,51.42,"magenta")
+    shape(8,40,45,"purple")
+    shape(9,40,40,"pink")
+    shape(10,40,36,"green")
     
 def shape(side, steps, degree, color):
     for _ in range(side):
