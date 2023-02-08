@@ -9,19 +9,17 @@ t.pensize(2)
 t.speed("fastest")
 
 def main():
-    gyro()
+    gyro(7)
 
 def random_color():
     return (random.randint(0,255), random.randint(0,255), random.randint(0,255))
 
-def gyro():
-    for i in range(0,360):
-        t.circle(60)
-        # t.left(20)
-        # t.forward(1)
-        t.setheading(t.heading() + 10)
-        t.pencolor(random_color())
-       
+def gyro(space_size):
+  for _ in range(int(360 / space_size)):
+      t.circle(100)
+      t.setheading(t.heading() + space_size)
+      t.pencolor(random_color())
+   
 
 if __name__ == '__main__':
     main()
