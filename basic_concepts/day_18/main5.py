@@ -17,8 +17,9 @@ def random_color():
 def gyro():
     for i in range(0,360):
         t.circle(60)
-        t.left(20)
-        t.forward(1)
+        # t.left(20)
+        # t.forward(1)
+        t.setheading(t.heading() + 10)
         t.pencolor(random_color())
        
 
