@@ -11,8 +11,13 @@ def main():
   
 def get_shape(side):
     angle = 360 / side
+<<<<<<< HEAD
     for _ in range(side):
         tim.pencolor(random.choice(colors))
+=======
+    tim.pencolor(random.choice(colors))
+    for _ in range(side):
+>>>>>>> Master (#7)
         tim.forward(50)
         tim.right(angle)
          
