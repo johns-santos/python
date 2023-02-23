@@ -1,6 +1,3 @@
-
-from turtle import Turtle, Screen
-
 from turtle import Turtle
 from turtle import Screen
 
@@ -8,14 +5,21 @@ from turtle import Screen
 screen = Screen()
 screen.colormode(255)
 
+# Instatinate turtle
+timmy_the_turtle = Turtle()
+timmy_the_turtle.shape("turtle")
+timmy_the_turtle.color(139, 0, 139)
+timmy_the_turtle.forward(100)
+timmy_the_turtle.right(90)
+timmy_the_turtle.forward(100)
 
-tim = Turtle()
-tim.shape("turtle")
-tim.color(139, 0, 139)
 
-for _ in range(0,4):
-    tim.left(90)
-    tim.forward(100)
+
+
+
+
+
+
 
 
 
