@@ -14,11 +14,19 @@ class Snake:
     def create_snake(self):
     # Create snake body out of  3 squares - easiest way use tuple and forloop
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")   
-            new_segment.color("magenta")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
+            
+            
+    def add_segment(self, position):
+        new_segment = Turtle("square")   
+        new_segment.color("magenta")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
+
+    def extend_snake(self):
+        # Add segment to end of segments list
+        self.add_segment(self.segments[-1].position())
         
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
