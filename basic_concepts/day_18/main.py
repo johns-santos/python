@@ -12,9 +12,6 @@ tim.color(139, 0, 139)
 for _ in range(0,4):
     tim.left(90)
     tim.forward(100)
-# tim.left(90)
-# tim.forward(100)
-# tim.left(90)
-# tim.forward(100)
+
 
 screen.exitonclick()
