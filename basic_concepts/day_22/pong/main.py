@@ -1,37 +1,20 @@
 # Classes (screen, paddle, ball, scoreboard)
-from turtle import Turtle,Screen,hideturtle,showturtle
+from turtle import Turtle,Screen
 from paddle import Paddle
+from ball import Ball
 import time
 
-#1)  Create screen
 screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
 screen.title("PONG")
 screen.tracer(0)
 
-
-  
-#2) Create paddle class
-# Create contorl for user paddle
-#3) Create automated paddle
-#4) Create ball
-# Make ball move around screen
-
-#5) Detect collision with wall and bounce
-
-#6) Detect collision with paddle and bounce
-
-#7) Detect when paddle misses ball
-
-
-#8) Create scoreboard
-# Keep score
-# Count rounds
-# end game & Declare winner
-
 r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
+ball = Ball()
+r_score = 0
+l_score = 0
 
 screen.listen()
 screen.onkey(r_paddle.go_up, "Up")
@@ -41,9 +24,29 @@ screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
 while game_is_on:
-    # Refresh
-    # time.sleep(0.1)
-    # Refresh control rate
+    time.sleep(0.1)
     screen.update()
+    ball.move()
+    
+    # Detect wall collision
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce_y()
+        
+    # Detect with right paddle  
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < 320:
+        ball.bounce_x()
+    
+    # Detect missed ball and game over
+    if ball.xcor() > 390:
+        ball.reset_position()
+        
+    if ball.xcor() < -390:
+        ball.reset_position()
+ 
+ # LEFT TO DO
+ #8) Create scoreboard
+# Keep score
+# Count roundsw
+# end game & Declare winner   
 
 screen.exitonclick()
