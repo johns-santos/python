@@ -2,27 +2,33 @@ from turtle import Turtle
 STARTING_POSITIONS = [(0,0),(-20,0),(-40,0)]
 MOVE_DISTANCE = 20
 
-    
 class Snake:
     
     def __init__(self):
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
-        
-        
+                
     def create_snake(self):
     # Create snake body out of  3 squares - easiest way use tuple and forloop
         for position in STARTING_POSITIONS:
             self.add_segment(position)
-            
-            
+                      
     def add_segment(self, position):
         new_segment = Turtle("square")   
         new_segment.color("magenta")
         new_segment.penup()
         new_segment.goto(position)
         self.segments.append(new_segment)
+        
+    def snake_reset(self):
+        #Send dead snake segments to off screen location
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        # initialize snake - at center of screen
+        self.create_snake()
+        self.head = self.segments[0]
 
     def extend_snake(self):
         # Add segment to end of segments list
@@ -51,6 +57,3 @@ class Snake:
     def right(self):
         if self.head.heading() != 180:
             self.head.setheading(0)
-        
-    
-    
