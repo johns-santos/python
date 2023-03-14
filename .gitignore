@@ -1,3 +1,7 @@
+
+basic_concepts/day_25/MailMerge_Project/Output/ReadyToSend
+*.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
