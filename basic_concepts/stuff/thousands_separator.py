@@ -9,3 +9,6 @@ def format_number(pos_num):
         
 test = format_number(3000000)
 print(test)
+
+
+
