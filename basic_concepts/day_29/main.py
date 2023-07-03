@@ -2,7 +2,7 @@ from tkinter import *
 from random import choice, randint, shuffle
 from tkinter import messagebox
 import pyperclip
-import csv
+import json 
 
 # ----------- PASSWORD GENERATOR ------------------------------- #
 def generate_passwd():
@@ -27,21 +27,34 @@ def save():
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
-                                         
+    new_data = {
+        website:{
+            'email': email,
+            'password': password,
+        }
+    }                                  
     if len(website) == 0 or len(password) == 0 or len(email) == 0:
         messagebox.showinfo(title="ERROR!",message=f"Please ensure all fields are complely filled out.")
     else:
-        is_ok = messagebox.askokcancel(title=website, message=f"These are the detals entered: \nEMAIL: {email} \nPASSWORD: {password} \nIs it ok to save?")
-        
-        if is_ok:
-            #Close file after write automatically
-            with open("cred_file", "a") as data_file:
-                data_file.write(f"{website} | {email} | {password}\n")
-                # Clear fields    
-                website_entry.delete(0, END)
-                password_entry.delete(0, END)
-  
-          
+        try:# Try reading file if it exists
+            with open("data.json", "r") as data_file:
+                # Read old data
+                data = json.load(data_file)
+        except FileNotFoundError:
+            #Create and open newly created filed with write
+            with open("data.json", "w") as data_file:
+                # Save new data to new file
+                json.dump(new_data, data_file, indent=4)
+        else:
+            data.update(new_data)
+            with open("data.json", "w") as data_file:
+                #Saving updated data
+                json.dump(data, data_file, indent=4)
+        finally:
+            # Clear fields    
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
+     
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Passwod Manager")
