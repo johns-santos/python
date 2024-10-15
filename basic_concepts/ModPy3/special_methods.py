@@ -2,7 +2,7 @@
 # Python Magic methods are the methods starting and ending with d
 # ouble underscores ‘__’. They are defined by built-in classes in 
 # Python and commonly used for operator overloading. 
-
+from copy import copy
 
 class Human:
     def __init__(self, first, last, age):
@@ -20,6 +20,12 @@ class Human:
         if isinstance(other, Human):
             return Human(first='Newborn', last=self.last, age=0)
         return f"You can not do that"
+    def __mul__(self, other):
+        if isinstance(other, int):
+            return [copy(self) for i in range(other)]
+        return "Cant multiply"
+    
+    
     
     
 class Cat:
@@ -28,14 +34,28 @@ class Cat:
         self.color = color
         self.age = age
 
+
+
 j = Human("Jenny", "Larsen", 47)
 k = Human("Kevin", "Jones", 49)
 
 print(j)
 print(len(j))
-
 print(j+k)
 
+print("")
 o = Cat("Street", "black",2) 
-
 print(j+o)
+
+
+print("")
+print(j*2)
+
+triplets = j * 3
+triplets[1].first = 'Jessica'
+triplets[2].first = 'Janet'
+print(triplets)
+
+print("")
+triplets2 = (k + j) * 3
+print(triplets2)
